@@ -79,4 +79,16 @@ class backgroundTasks {
         }
     }
 
+    /**
+     * Resets the timer to begin counting from now instead of whenever it had been started.
+     */
+    public resetTimer(): void {
+        if (!this.interval) return;
+
+        clearInterval(this.interval);
+        this.interval = setInterval(() => {
+            this.next();
+        }, this.rate);
+    }
+
 } 

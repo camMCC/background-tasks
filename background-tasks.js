@@ -68,6 +68,20 @@
             this.current = null;
         }
     };
+
+    /**
+    * Resets the timer to begin counting from now instead of whenever it had been started.
+    */
+    backgroundTasks.prototype.resetTimer = function () {
+        var _this = this;
+        if (!this.interval)
+            return;
+
+        clearInterval(this.interval);
+        this.interval = setInterval(function () {
+            _this.next();
+        }, this.rate);
+    };
     return backgroundTasks;
 })();
 //# sourceMappingURL=background-tasks.js.map

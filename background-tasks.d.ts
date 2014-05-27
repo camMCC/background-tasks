@@ -37,4 +37,8 @@ declare class backgroundTasks {
     * Internal method that processes the next item in the task stack.
     */
     private next();
+    /**
+     * Resets the timer to begin counting from now instead of whenever it had been started.
+     */
+    public resetTimer(): void;
 }
